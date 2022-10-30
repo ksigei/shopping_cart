@@ -14,11 +14,11 @@ function CartItem({ id, image, title, price, quantity = 0 }) {
   const dispatch = useDispatch();
 
   return (
-    <Link
-      to={`/product/${id}`}
-      state={{ product: { id, image, title, price } }}
-    >
-      <div className="card">
+    <div className="card">
+      <Link
+        to={`/product/${id}`}
+        state={{ product: { id, image, title, price } }}
+      >
         <div className="card-image">
           <figure className="image">
             <img src={image} alt="product" />
@@ -35,31 +35,31 @@ function CartItem({ id, image, title, price, quantity = 0 }) {
             </div>
           </div>
         </div>
-        <footer className="card-footer">
-          <div className="buttons has-addons card-footer-item">
-            <button
-              className="button is-primary"
-              onClick={() => dispatch(decrementQuantity(id))}
-            >
-              -
-            </button>
-            <button className="button is-primary">{quantity}</button>
-            <button
-              className="button is-primary"
-              onClick={() => dispatch(incrementQuantity(id))}
-            >
-              +
-            </button>
-          </div>
+      </Link>
+      <footer className="card-footer">
+        <div className="buttons has-addons card-footer-item">
           <button
-            className="button is-danger card-footer-item"
-            onClick={() => dispatch(removeItem(id))}
+            className="button is-primary"
+            onClick={() => dispatch(decrementQuantity(id))}
           >
-            <UilTrashAlt />
+            -
           </button>
-        </footer>
-      </div>
-    </Link>
+          <button className="button is-primary">{quantity}</button>
+          <button
+            className="button is-primary"
+            onClick={() => dispatch(incrementQuantity(id))}
+          >
+            +
+          </button>
+        </div>
+        <button
+          className="button is-danger card-footer-item"
+          onClick={() => dispatch(removeItem(id))}
+        >
+          <UilTrashAlt />
+        </button>
+      </footer>
+    </div>
   );
 }
 

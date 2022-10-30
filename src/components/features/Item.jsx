@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 import { UilPlusCircle } from "@iconscout/react-unicons";
+import { Link } from "react-router-dom";
 import "./item.scss";
 
 function Item({ id, title, image, price }) {
@@ -9,18 +10,23 @@ function Item({ id, title, image, price }) {
 
   return (
     <div className="card">
-      <div className="card-image">
-        <figure className="image">
-          <img src={image} alt="product" />
-        </figure>
-      </div>
-      <div className="card-content">
-        <div className="media">
-          <div className="media-content">
-            <p className="title is-6">{title}</p>
+      <Link
+        to={`/Product/${id}`}
+        state={{ product: { id, title, image, price } }}
+      >
+        <div className="card-image">
+          <figure className="image">
+            <img src={image} alt="product" />
+          </figure>
+        </div>
+        <div className="card-content">
+          <div className="media">
+            <div className="media-content">
+              <p className="title is-6">{title}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
       <footer className="card-footer">
         <div className="card-footer-item">
           <small>$</small>
