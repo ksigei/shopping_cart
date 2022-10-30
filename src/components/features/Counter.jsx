@@ -20,7 +20,7 @@ function Total() {
     <div className="card">
       <div className="card-content">
         <div className="content">
-          <h2>ORDER SUMMARY</h2>
+          <h3>ORDER SUMMARY</h3>
           <div>
             <p className="total__p">
               total ({getTotal().totalQuantity} items)
