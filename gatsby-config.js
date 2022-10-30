@@ -1,1 +1,2 @@
-plugins: [`gatsby-plugin-sass`] // (or `gatsby-plugin-sass`)
+// eslint-disable-next-line
+['gatsby-plugin-sass'];

@@ -1,1 +1,17 @@
-@charset "utf-8"; @import "~bulma/bulma.sass";
+@charset "utf-8";
+
+@import "~bulma/bulma.sass";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 75%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  line-height: 1.6;
+}
