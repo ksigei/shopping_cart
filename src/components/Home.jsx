@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
 import Item from "./features/Item";
-// import { ShoppingCart } from '@mui/icons-material'
-// import {useNavigate} from 'react-router-dom'
-// import { useSelector } from 'react-redux';
 import { useDispatch, useSelector } from "react-redux";
 import { fetchproducts } from "../redux/productSlice";
 import { Link } from "react-router-dom";
 
 function Home() {
-  // const cart = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
   const { products, isLoading } = useSelector((state) => state.products);
