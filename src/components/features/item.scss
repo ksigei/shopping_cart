@@ -2,20 +2,24 @@
   .card {
     height: 100%;
     width: 15vw;
+
     .card-image {
       height: 30vh;
       width: 15vw;
+
       .image {
         img {
           height: 30vh;
         }
       }
     }
+
     .card-content {
       height: 20vh;
     }
   }
 }
+
 @media only screen and (max-width: 768px) {
   .card {
     height: 100%;
@@ -30,8 +34,10 @@
         }
       }
     }
+
     .card-content {
       height: 20vh;
+
       .media {
         height: 20vh;
       }
