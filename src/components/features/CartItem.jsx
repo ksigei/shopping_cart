@@ -1,33 +1,60 @@
-// import './cartItem.css'
-import React from 'react';
-import { incrementQuantity, decrementQuantity, removeItem} from '../../redux/cartSlice';
-import { useDispatch } from 'react-redux'
+import React from "react";
+import "./cartItem.scss";
+import { UilTrashAlt } from '@iconscout/react-unicons'
 
-function CartItem({id, image, title, price, quantity=0}) {
-  const dispatch = useDispatch()
+import {
+  incrementQuantity,
+  decrementQuantity,
+  removeItem,
+} from "../../redux/cartSlice";
+import { useDispatch } from "react-redux";
+
+function CartItem({ id, image, title, price, quantity = 0 }) {
+  const dispatch = useDispatch();
 
   return (
-    <div className="cartItem">
-      <img className="cartItem__image" src={image} alt='item'/>
-      <div className="cartItem__info">
-        <p className="cartItem__title">{title}</p>
-        <p className="cartItem__price">
-          <small>$</small>
-          <strong>{price}</strong>
-        </p>
-        <div className='cartItem__incrDec'>
-          <button onClick={() => dispatch(decrementQuantity(id))}>-</button>
-          <p>{quantity}</p>
-          <button onClick={() => dispatch(incrementQuantity(id))}>+</button>
+    <div className="card">
+      <div className="card-image">
+        <figure className="image">
+          <img src={image} alt="product" />
+        </figure>
+      </div>
+      <div className="card-content">
+        <div className="media">
+          <div className="media-content">
+            <p className="title">{title}</p>
+            <p className="subtitle">
+              <small>$</small>
+              <strong>{price}</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+      <footer className="card-footer">
+        <div className="buttons has-addons card-footer-item">
+          <button
+            className="button is-primary"
+            onClick={() => dispatch(decrementQuantity(id))}
+          >
+            -
+          </button>
+          <button className="button is-primary">{quantity}</button>
+          <button
+            className="button is-primary"
+            onClick={() => dispatch(incrementQuantity(id))}
+          >
+            +
+          </button>
         </div>
         <button
-          className='cartItem__removeButton' 
-          onClick={() => dispatch(removeItem(id))}>
-            Remove
+          className="button is-danger card-footer-item"
+          onClick={() => dispatch(removeItem(id))}
+        >
+          <UilTrashAlt />
         </button>
-      </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default CartItem
+export default CartItem;
