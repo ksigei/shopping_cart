@@ -6,10 +6,18 @@ import { UilShoppingBag } from "@iconscout/react-unicons";
 import { UilShoppingCartAlt } from "@iconscout/react-unicons";
 
 export default function Navbar() {
-  const [isActive, setisActive] = React.useState(false);
+  const [isActive, toggleActive] = React.useState(false);
 
   const cart = useSelector((state) => state.cart.cart);
   const navigate = useNavigate();
+
+  const totalQuantity = () => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.quantity;
+    });
+    return total;
+  };
 
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -24,7 +32,7 @@ export default function Navbar() {
 
         <a
           onClick={() => {
-            setisActive(!isActive);
+            toggleActive(!isActive);
           }}
           role="button"
           className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
@@ -46,10 +54,13 @@ export default function Navbar() {
             <Link to="/" className="navbar-item">
               Home
             </Link>
-            <Link to="/cart" className="navbar-item tag is-primary is-size-4">
-              <UilShoppingBag className="mr-2" />
-              <span className="">{cart.length}</span>
-            </Link>
+            <div
+              className="button is-primary"
+              onClick={() => navigate("/cart")}
+            >
+              <UilShoppingBag />
+              <p>{totalQuantity() || 0}</p>
+            </div>
           </div>
         </div>
       </div>
