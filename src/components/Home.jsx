@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Item from "./features/Item";
 // import { ShoppingCart } from '@mui/icons-material'
 // import {useNavigate} from 'react-router-dom'
 // import { useSelector } from 'react-redux';
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchproducts } from "../redux/productSlice";
+import { Link } from "react-router-dom";
 
 function Home() {
   // const cart = useSelector((state) => state.cart);
@@ -15,9 +15,9 @@ function Home() {
 
   useEffect(() => {
     dispatch(fetchproducts());
-  }, [dispatch]);
+  });
 
-  console.log(products);
+  // console.log(products);
   return (
     <div>
       <div className="hero is-primary">
@@ -30,17 +30,18 @@ function Home() {
         <div className="container">
           <div className="columns is-multiline">
             {isLoading ? (
-              <div className="loader"></div>
+              <div className="loader" />
             ) : (
               products.map((product) => (
-                <div className="column">
-                  <Item
-                    key={product.id}
-                    id={product.id}
-                    title={product.title}
-                    price={product.price}
-                    image={product.image}
-                  />
+                <div className="column" key={product.id}>
+                  <Link to={`/Product/${product.id}`} state={{ product }}>
+                    <Item
+                      id={product.id}
+                      title={product.title}
+                      price={product.price}
+                      image={product.image}
+                    />
+                  </Link>
                 </div>
               ))
             )}

@@ -1,26 +1,35 @@
 import React from "react";
-import { UilShoppingBag } from '@iconscout/react-unicons'
-import {useNavigate} from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { UilShoppingBag } from "@iconscout/react-unicons";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { UilShoppingCartAlt } from "@iconscout/react-unicons";
 
 export default function Navbar() {
-  const navigate = useNavigate()
-  const cart = useSelector((state) => state.cart.cart)
+  const navigate = useNavigate();
+  const cart = useSelector((state) => state.cart.cart);
 
   const getTotalQuantity = () => {
-    let total = 0
-    cart.forEach(item => {
-      total += item.quantity
-    })
-    return total
-  }
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.quantity;
+    });
+    return total;
+  };
   return (
-
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="/">
-          <h3 className="title is-3">Shopping</h3>
-        </a>
+        <Link
+          to="/"
+          className="navbar-item  is-size-1
+        has-text-weight-bold has-text-primary"
+        >
+          <UilShoppingCartAlt
+            className=" mr-2 
+          
+           "
+          />{" "}
+          TudoCart
+        </Link>
 
         <a
           role="button"
@@ -43,8 +52,11 @@ export default function Navbar() {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <div className="button is-primary" onClick={() => navigate("/cart")}>
-                <UilShoppingBag/>
+              <div
+                className="button is-primary"
+                onClick={() => navigate("/cart")}
+              >
+                <UilShoppingBag />
                 <p>{getTotalQuantity() || 0}</p>
               </div>
             </div>
