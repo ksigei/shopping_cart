@@ -1,23 +1,28 @@
-import React from "react";
-import { UilTrashAlt } from "@iconscout/react-unicons";
-import "./cartItem.scss";
-
+import React from 'react';
+import { UilTrashAlt } from '@iconscout/react-unicons';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
   incrementQuantity,
   decrementQuantity,
   removeItem,
-} from "../../redux/cartSlice";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+} from '../../redux/cartSlice';
+import './cartItem.scss';
 
-function CartItem({ id, image, title, price, quantity = 0 }) {
+function CartItem({
+  id, image, title, price, quantity = 0,
+}) {
   const dispatch = useDispatch();
 
   return (
     <div className="card">
       <Link
         to={`/product/${id}`}
-        state={{ product: { id, image, title, price } }}
+        state={{
+          product: {
+            id, image, title, price,
+          },
+        }}
       >
         <div className="card-image">
           <figure className="image">
@@ -39,13 +44,15 @@ function CartItem({ id, image, title, price, quantity = 0 }) {
       <footer className="card-footer">
         <div className="buttons has-addons card-footer-item">
           <button
+            type="button"
             className="button is-primary"
             onClick={() => dispatch(decrementQuantity(id))}
           >
             -
           </button>
-          <button className="button is-primary">{quantity}</button>
+          <button type="button" className="button is-primary">{quantity}</button>
           <button
+            type="button"
             className="button is-primary"
             onClick={() => dispatch(incrementQuantity(id))}
           >
@@ -53,6 +60,7 @@ function CartItem({ id, image, title, price, quantity = 0 }) {
           </button>
         </div>
         <button
+          type="button"
           className="button is-danger card-footer-item"
           onClick={() => dispatch(removeItem(id))}
         >

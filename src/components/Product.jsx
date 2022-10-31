@@ -1,8 +1,8 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/cartSlice";
-import { useLocation } from "react-router-dom";
-import { UilPlusCircle } from "@iconscout/react-unicons";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { UilPlusCircle } from '@iconscout/react-unicons';
+import { addToCart } from '../redux/cartSlice';
 
 function Product() {
   const { state } = useLocation();
@@ -33,25 +33,28 @@ function Product() {
           </div>
           <div className="columns">
             <div className="column">
-              <h2 className="subtitle is-4">${product.price}</h2>
+              <h2 className="subtitle is-4">
+                $
+                {product.price}
+              </h2>
             </div>
           </div>
           <div className="columns">
             <div className="column">
               <button
                 className="button is-primary is-large"
-                onClick={() =>
-                  dispatch(
-                    addToCart({
-                      id: product.id,
-                      title: product.title,
-                      image: product.image,
-                      price: product.price,
-                    })
-                  )
-                }
+                type="button"
+                onClick={() => dispatch(
+                  addToCart({
+                    id: product.id,
+                    title: product.title,
+                    image: product.image,
+                    price: product.price,
+                  }),
+                )}
               >
-                <UilPlusCircle /> Add
+                <UilPlusCircle />
+                Add
               </button>
             </div>
           </div>

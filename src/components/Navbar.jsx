@@ -1,9 +1,7 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { UilShoppingBag } from "@iconscout/react-unicons";
-
-import { UilShoppingCartAlt } from "@iconscout/react-unicons";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { UilShoppingBag, UilShoppingCartAlt } from '@iconscout/react-unicons';
 
 export default function Navbar() {
   const [isActive, toggleActive] = React.useState(false);
@@ -26,41 +24,42 @@ export default function Navbar() {
           <UilShoppingCartAlt
             className=" is-size-1 has-text-primary has-text-weight-bold mr-2
           "
-          />{" "}
+          />
           TudoCart
         </Link>
 
-        <a
+        <button
+          type="button"
           onClick={() => {
             toggleActive(!isActive);
           }}
-          role="button"
-          className={`navbar-burger burger ${isActive ? "is-active" : ""}`}
+          className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
           aria-label="menu"
           aria-expanded="false"
           data-target="navbar_mobile"
         >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </button>
       </div>
       <div
         id="navbar_mobile"
-        className={`navbar-menu ${isActive ? "is-active" : ""}`}
+        className={`navbar-menu ${isActive ? 'is-active' : ''}`}
       >
         <div className="navbar-end">
           <div className="navbar-item">
             <Link to="/" className="navbar-item">
               Home
             </Link>
-            <div
+            <button
+              type="button"
               className="button is-primary"
-              onClick={() => navigate("/cart")}
+              onClick={() => navigate('/cart')}
             >
               <UilShoppingBag />
               <p>{totalQuantity() || 0}</p>
-            </div>
+            </button>
           </div>
         </div>
       </div>
