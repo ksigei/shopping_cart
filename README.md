@@ -1,46 +1,82 @@
-# Getting Started with Create React App and Redux
+## Ecommerce app React, Redux toolkit, with fake store api, axios, redux preserve
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Table of Contents
 
-## Available Scripts
+* [About the Project](#about-the-project)
+* [Built With](#built-with)
+* [Getting Started](#getting-started)
+* [Contributing](#contributing)
+* [Authors](#author)
+* [Acknowledgements](#acknowledgements)
 
-In the project directory, you can run:
+## About Project
+## Screenshots
+![screenshot](./screenshots/screen1.png)
+![screenshot](./screenshots/screen2.png)
+![screenshot](./screenshots/screen3.png)
 
-### `npm start`
+## [Live Demo](https://shopping-cart-75h6g1re0-ksigei.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Built With
 
-### `npm test`
+* ReactJS
+* Redux
+* React Hooks
+* React Router
+* Axios
+* Bulma and Sass
+* Preserve State
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+* Clone this repo <https://github.com/ksigei/shopping_cart.git>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+    git clone https://github.com/ksigei/shopping_cart.git
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Navigate to shopping_cart folder/directory
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    cd shopping_cart
+    ```
 
-### `npm run eject`
+* On the comandline, at the project's root, run ```npm install``` or ```yarn install``` to install app dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Next, run ```npm start``` or ```yarn start``` which will run the app in the development mode.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* ALTERNATIVELY
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  * Just run ```npm run build``` or ```yarn build``` which will build the project and generate output files into the ```build``` directory.
 
-## Learn More
+  * Go to ```build``` directory and manually open ```index.html``` to interact with the app
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues)
+
+  1. Fork the Project
+  2. Create your Feature Branch (`git checkout -b feature/newFeature`)
+  3. Commit your Changes (`git commit -m 'Add some newFeature'`)
+  4. Push to the Branch (`git push -u origin feature/newFeature`)
+  5. Open a Pull Request
+
+## Author
+
+👤 **Sigei Kiprono**
+
+- GitHub: [@ksigei](https://github.com/ksigei)
+- LinkedIn: [Kiprono Japhet](https://www.linkedin.com/in/kiprono-japhet/)
+
+## Acknowledgements
+
+
+## Show your support
+
+Give a ⭐️ if you like this project!
