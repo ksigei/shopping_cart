@@ -1,18 +1,25 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { addToCart } from "../../redux/cartSlice";
-import { UilPlusCircle } from "@iconscout/react-unicons";
-import "./item.scss";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { UilPlusCircle } from '@iconscout/react-unicons';
+import PropTypes from 'prop-types';
+import { addToCart } from '../../redux/cartSlice';
+import './item.scss';
 
-function Item({ id, title, image, price }) {
+function Item({
+  id, title, image, price,
+}) {
   const dispatch = useDispatch();
 
   return (
     <div className="card">
       <Link
         to={`/Product/${id}`}
-        state={{ product: { id, title, image, price } }}
+        state={{
+          product: {
+            id, title, image, price,
+          },
+        }}
       >
         <div className="card-image">
           <figure className="image">
@@ -34,24 +41,30 @@ function Item({ id, title, image, price }) {
         </div>
         <div className="card-footer-item">
           <button
+            type="button"
             className="button is-primary"
-            onClick={() =>
-              dispatch(
-                addToCart({
-                  id,
-                  title,
-                  image,
-                  price,
-                })
-              )
-            }
+            onClick={() => dispatch(
+              addToCart({
+                id,
+                title,
+                image,
+                price,
+              }),
+            )}
           >
-            <UilPlusCircle /> Add
+            <UilPlusCircle />
+            Add
           </button>
         </div>
       </footer>
     </div>
   );
 }
+Item.propTypes = {
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+};
 
 export default Item;

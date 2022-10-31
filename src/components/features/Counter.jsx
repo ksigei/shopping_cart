@@ -1,6 +1,6 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { UilBill } from '@iconscout/react-unicons'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { UilBill } from '@iconscout/react-unicons';
 
 function Total() {
   const cart = useSelector((state) => state.cart.cart);
@@ -16,27 +16,32 @@ function Total() {
   };
 
   return (
-      <div className="card">
-        <div className="card-content">
-          <div className="content">
-            <h3 className="title 
-            is-5
-            ">
-            ORDER SUMMARY</h3>
-            <div>
-              <p className="total__p">
-                total ({getTotal().totalQuantity} items) :{" "}
-                <strong>${getTotal().totalPrice}</strong>
-              </p>
-            </div>
-            <button className="button is-primary is-fullwidth">
-              <UilBill /> Checkout
-            </button>
-
-
+    <div className="card">
+      <div className="card-content">
+        <div className="content">
+          <h3 className="title is-5">
+            ORDER SUMMARY
+          </h3>
+          <div>
+            <p className="subtitle is-6">
+              total
+              (
+              {getTotal().totalQuantity}
+              items) :
+              {' '}
+              <strong>
+                $
+                {getTotal().totalPrice}
+              </strong>
+            </p>
           </div>
+          <button type="button" className="button is-primary is-fullwidth">
+            <UilBill />
+            Checkout
+          </button>
         </div>
       </div>
+    </div>
   );
 }
 
