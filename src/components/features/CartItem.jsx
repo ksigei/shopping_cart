@@ -2,6 +2,7 @@ import React from 'react';
 import { UilTrashAlt } from '@iconscout/react-unicons';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
   incrementQuantity,
   decrementQuantity,
@@ -70,5 +71,16 @@ function CartItem({
     </div>
   );
 }
+
+CartItem.propTypes = {
+  id: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number,
+};
+CartItem.defaultProps = {
+  quantity: 0,
+};
 
 export default CartItem;
