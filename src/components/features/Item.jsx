@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { addToCart } from "../../redux/cartSlice";
 import { UilPlusCircle } from "@iconscout/react-unicons";
-import { Link } from "react-router-dom";
 import "./item.scss";
 
 function Item({ id, title, image, price }) {

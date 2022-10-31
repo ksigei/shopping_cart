@@ -1,6 +1,6 @@
 import React from "react";
-import "./cartItem.scss";
 import { UilTrashAlt } from "@iconscout/react-unicons";
+import "./cartItem.scss";
 
 import {
   incrementQuantity,

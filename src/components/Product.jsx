@@ -1,8 +1,7 @@
 import React from "react";
-
-import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import { useLocation } from "react-router-dom";
 import { UilPlusCircle } from "@iconscout/react-unicons";
 
 function Product() {

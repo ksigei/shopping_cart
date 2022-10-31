@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import Item from "./features/Item";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchproducts } from "../redux/productSlice";
+import Item from "./features/Item";
 
 function Home() {
   const dispatch = useDispatch();
